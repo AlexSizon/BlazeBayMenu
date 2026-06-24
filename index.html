@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blaze Bay Menu</title>
+    <meta
+      name="description"
+      content="Blaze Bay Cafe Bar menu with mobile-friendly tabs for burgers, cocktails, coffee, lemonades, and more."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Yellowtail&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-backdrop" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <p class="eyebrow">Cafe Bar Menu</p>
+          <div class="brand-lockup">
+            <p class="brand-topline">BLAZE</p>
+            <h1>Bay</h1>
+            <p class="brand-bottomline">CAFE . BAR</p>
+          </div>
+          <p class="hero-description">
+            A mobile-first menu inspired by the printed Blaze Bay design: neon
+            accents, tropical night energy, and fast browsing for food and
+            drinks.
+          </p>
+          <div class="hero-actions">
+            <a href="tel:+359888339031" class="action-pill">Call venue</a>
+            <a
+              href="https://instagram.com/blazebay_beach"
+              class="action-pill action-pill-secondary"
+              target="_blank"
+              rel="noreferrer"
+              >Instagram</a
+            >
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <p class="mini-label">Visit Blaze Bay</p>
+          <dl class="venue-meta">
+            <div>
+              <dt>Hours</dt>
+              <dd>09:00 - 23:00</dd>
+            </div>
+            <div>
+              <dt>Phone</dt>
+              <dd>+359 888 339 031</dd>
+            </div>
+            <div>
+              <dt>Handle</dt>
+              <dd>@blazebay_beach</dd>
+            </div>
+          </dl>
+          <p class="hero-note">
+            Swipe the tabs to jump between every menu section. Designed for
+            easy one-handed browsing on phones.
+          </p>
+        </aside>
+      </header>
+
+      <main class="menu-experience">
+        <section class="section-heading">
+          <div>
+            <p class="eyebrow">Menu navigation</p>
+            <h2>Choose your vibe</h2>
+          </div>
+          <p class="section-copy">
+            Every category from the printed menu is mapped into a static,
+            touch-friendly tab view with clear prices and readable details.
+          </p>
+        </section>
+
+        <section class="menu-browser">
+          <div class="tabs-shell">
+            <div
+              id="category-tabs"
+              class="tabs"
+              role="tablist"
+              aria-label="Blaze Bay menu categories"
+            ></div>
+          </div>
+
+          <div class="panel-frame">
+            <div
+              id="category-panels"
+              class="category-panels"
+              aria-live="polite"
+            ></div>
+          </div>
+        </section>
+
+        <section class="menu-summary" aria-label="Menu overview">
+          <article class="summary-card">
+            <p class="mini-label">Fast order flow</p>
+            <h3>Food and drinks in one place</h3>
+            <p>
+              Burgers, brioche sandwiches, cocktails, coffee, lemonades, shakes
+              and extras are all reachable without page reloads.
+            </p>
+          </article>
+          <article class="summary-card">
+            <p class="mini-label">Phone first</p>
+            <h3>Built for thumb-friendly browsing</h3>
+            <p>
+              Large tap targets, sticky tab navigation, and high-contrast text
+              keep the menu easy to scan on narrow screens.
+            </p>
+          </article>
+          <article class="summary-card">
+            <p class="mini-label">Static only</p>
+            <h3>No backend required</h3>
+            <p>
+              All menu content is bundled locally, so the site can be hosted as
+              simple static files.
+            </p>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="./menu-data.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+openapi: 3.1.0
+info:
+  title: BlazeBayMenu API
+  version: 0.1.0
+  summary: API contract for the BlazeBayMenu project.
+  description: |
+    Initial OpenAPI scaffold for BlazeBayMenu.
+
+    This spec is intentionally minimal so we can grow the contract
+    alongside the product without baking in the wrong assumptions early.
+servers:
+  - url: http://localhost:3000
+    description: Local development server
+tags:
+  - name: health
+    description: Service health and readiness endpoints
+paths:
+  /health:
+    get:
+      tags:
+        - health
+      operationId: getHealth
+      summary: Check API health
+      description: Returns a simple status payload to confirm the API is reachable.
+      responses:
+        "200":
+          description: API is healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthResponse"
+components:
+  schemas:
+    HealthResponse:
+      type: object
+      additionalProperties: false
+      required:
+        - status
+      properties:
+        status:
+          type: string
+          description: Current health status of the service
+          examples:
+            - ok
