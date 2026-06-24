@@ -114,6 +114,55 @@ body::before {
   z-index: 1;
 }
 
+.hero-toolbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.locale-switch {
+  display: grid;
+  gap: 0.4rem;
+  justify-items: end;
+}
+
+.locale-toggle {
+  display: inline-flex;
+  padding: 0.25rem;
+  border: 1px solid rgba(255, 126, 107, 0.24);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.locale-button {
+  min-width: 3rem;
+  min-height: 2.35rem;
+  padding: 0.45rem 0.7rem;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--font-condensed);
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.locale-button:hover,
+.locale-button:focus-visible {
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
+.locale-button.is-active {
+  color: var(--bg);
+  background: linear-gradient(135deg, var(--accent), #ffb36b);
+  box-shadow: var(--glow);
+}
+
 .eyebrow,
 .mini-label {
   margin: 0;
@@ -452,7 +501,8 @@ body::before {
 
 .menu-panel:focus-visible,
 .tab-button:focus-visible,
-.action-pill:focus-visible {
+.action-pill:focus-visible,
+.locale-button:focus-visible {
   outline: 2px solid var(--accent-gold);
   outline-offset: 3px;
 }

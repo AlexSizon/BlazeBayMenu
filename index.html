@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="bg">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,20 +21,34 @@
       <header class="hero">
         <div class="hero-backdrop" aria-hidden="true"></div>
         <div class="hero-copy">
-          <p class="eyebrow">Cafe Bar Menu</p>
+          <div class="hero-toolbar">
+            <p id="hero-eyebrow" class="eyebrow">Cafe Bar Menu</p>
+            <div class="locale-switch">
+              <p id="locale-switch-label" class="mini-label">Language</p>
+              <div
+                id="locale-toggle"
+                class="locale-toggle"
+                role="group"
+                aria-label="Language selector"
+              ></div>
+            </div>
+          </div>
           <div class="brand-lockup">
             <p class="brand-topline">BLAZE</p>
             <h1>Bay</h1>
             <p class="brand-bottomline">CAFE . BAR</p>
           </div>
-          <p class="hero-description">
-            A mobile-first menu inspired by the printed Blaze Bay design: neon
-            accents, tropical night energy, and fast browsing for food and
+          <p id="hero-description" class="hero-description">
+            Explore the Blaze Bay menu and choose from brioche sandwiches,
+            burgers, seaside bites, signature cocktails, coffee, and summer
             drinks.
           </p>
           <div class="hero-actions">
-            <a href="tel:+359888339031" class="action-pill">Call venue</a>
+            <a id="call-venue-button" href="tel:+359888339031" class="action-pill"
+              >Call venue</a
+            >
             <a
+              id="instagram-button"
               href="https://instagram.com/blazebay_beach"
               class="action-pill action-pill-secondary"
               target="_blank"
@@ -45,37 +59,34 @@
         </div>
 
         <aside class="hero-card">
-          <p class="mini-label">Visit Blaze Bay</p>
+          <p id="venue-card-label" class="mini-label">Visit Blaze Bay</p>
           <dl class="venue-meta">
             <div>
-              <dt>Hours</dt>
+              <dt id="hours-label">Hours</dt>
               <dd>09:00 - 23:00</dd>
             </div>
             <div>
-              <dt>Phone</dt>
+              <dt id="phone-label">Phone</dt>
               <dd>+359 888 339 031</dd>
             </div>
             <div>
-              <dt>Handle</dt>
+              <dt id="handle-label">Handle</dt>
               <dd>@blazebay_beach</dd>
             </div>
           </dl>
-          <p class="hero-note">
-            Swipe the tabs to jump between every menu section. Designed for
-            easy one-handed browsing on phones.
-          </p>
+          <p id="hero-note" class="hero-note" hidden></p>
         </aside>
       </header>
 
       <main class="menu-experience">
         <section class="section-heading">
           <div>
-            <p class="eyebrow">Menu navigation</p>
-            <h2>Choose your vibe</h2>
+            <p id="menu-nav-eyebrow" class="eyebrow">Menu navigation</p>
+            <h2 id="menu-nav-title">Choose your vibe</h2>
           </div>
-          <p class="section-copy">
-            Every category from the printed menu is mapped into a static,
-            touch-friendly tab view with clear prices and readable details.
+          <p id="menu-nav-copy" class="section-copy">
+            Browse food, cocktails, coffee, and refreshing drinks to find
+            exactly what you want to eat or sip right now.
           </p>
         </section>
 
@@ -98,32 +109,11 @@
           </div>
         </section>
 
-        <section class="menu-summary" aria-label="Menu overview">
-          <article class="summary-card">
-            <p class="mini-label">Fast order flow</p>
-            <h3>Food and drinks in one place</h3>
-            <p>
-              Burgers, brioche sandwiches, cocktails, coffee, lemonades, shakes
-              and extras are all reachable without page reloads.
-            </p>
-          </article>
-          <article class="summary-card">
-            <p class="mini-label">Phone first</p>
-            <h3>Built for thumb-friendly browsing</h3>
-            <p>
-              Large tap targets, sticky tab navigation, and high-contrast text
-              keep the menu easy to scan on narrow screens.
-            </p>
-          </article>
-          <article class="summary-card">
-            <p class="mini-label">Static only</p>
-            <h3>No backend required</h3>
-            <p>
-              All menu content is bundled locally, so the site can be hosted as
-              simple static files.
-            </p>
-          </article>
-        </section>
+        <section
+          id="summary-cards"
+          class="menu-summary"
+          aria-label="Menu overview"
+        ></section>
       </main>
     </div>
 
