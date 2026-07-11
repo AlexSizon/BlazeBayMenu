@@ -426,6 +426,7 @@ body::before {
 
 .panel-intro {
   margin: 0;
+  white-space: pre-line;
 }
 
 .menu-list {

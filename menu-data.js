@@ -12,10 +12,10 @@ const russianPhrases = {
   "Премини към бар селекцията за авторски коктейли, наливна бира и класически напитки за залез край морето.":
     "Перейдите к барной карте с авторскими коктейлями, разливным пивом и классическими напитками для заката у моря.",
   "Пухкави бриоши.": "Воздушные бриоши.",
-  "Бургери. Сервира се с пържени картофки и сос по избор.":
-    "Бургеры. Подаются с картофелем фри и соусом на выбор.",
-  "Хрупкави хапки за споделяне. Сосове по избор: кетчуп, майонеза, горчица, барбекю, чеснов, чедър и унаги.":
-    "Хрустящие закуски для компании. На выбор: кетчуп, майонез, горчица, барбекю, чесночный, чеддер и унаги.",
+  "Сервира се с пържени картофки и сос по избор.":
+    "Подаются с картофелем фри и соусом на выбор.",
+  "Хрупкави хапки за споделяне.\nСосове по избор: кетчуп, майонеза, горчица, барбекю, чеснов, чедър и унаги.":
+    "Хрустящие закуски для компании.\nНа выбор: кетчуп, майонез, горчица, барбекю, чесночный, чеддер и унаги.",
   "Коктейли за неоновите часове и любими класики.":
     "Коктейли для неоновых вечеров и любимая классика.",
   "Наливна и бутилирана бира.": "Разливное и бутылочное пиво.",
@@ -86,7 +86,7 @@ const russianReplacements = [
   ["Ром Bacardi Carta Blanca/Negra", "Ром Bacardi Carta Blanca/Negra"],
   ["Ром Bacardi Spiced Gold", "Ром Bacardi Spiced Gold"],
   ["Просеко Mont Royal", "Просекко Mont Royal"],
-  ["Просеко CAV", "Просекко CAV"],
+  ["Просеко CAJ", "Просекко CAJ"],
   ["Фреш от портокал/грейпфрут", "Свежевыжатый сок из апельсина/грейпфрута"],
   ["Шот лимон-джинджифил-мед", "Шот лимон-имбирь-мёд"],
   ["Шот вишна", "Шот вишня"],
@@ -399,8 +399,8 @@ const menuData = {
       title: text("Бургери", "Burgers"),
       group: text("Храна", "Food"),
       intro: text(
-        "Бургери. Сервира се с пържени картофки и сос по избор.",
-        "Burgers. Served with french fries and a sauce of your choice."
+        "Сервира се с пържени картофки и сос по избор.",
+        "Served with french fries and a sauce of your choice."
       ),
       items: [
         {
@@ -443,8 +443,8 @@ const menuData = {
       title: text("Пържени изкушения", "Fried Temptations"),
       group: text("Храна", "Food"),
       intro: text(
-        "Хрупкави хапки за споделяне. Сосове по избор: кетчуп, майонеза, горчица, барбекю, чеснов, чедър и унаги.",
-        "Crispy shareables. Sauce choices include ketchup, mayo, mustard, BBQ, garlic, cheddar, and unagi."
+        "Хрупкави хапки за споделяне.\nСосове по избор: кетчуп, майонеза, горчица, барбекю, чеснов, чедър и унаги.",
+        "Crispy shareables.\nSauce choices include ketchup, mayo, mustard, BBQ, garlic, cheddar, and unagi."
       ),
       items: [
         { name: text("Пържени картофи", "French Fries"), options: [option("180", "g", "4.50 €")] },
@@ -761,7 +761,7 @@ const menuData = {
         { name: text("Ром Bacardi Carta Blanca/Negra", "Bacardi Carta Blanca/Negra Rum"), options: [option("50", "ml", "3.50 €")] },
         { name: text("Ром Bacardi Spiced Gold", "Bacardi Spiced Gold Rum"), options: [option("50", "ml", "3.90 €")] },
         { name: text("Просеко Mont Royal", "Mont Royal Prosecco"), options: [option("150", "ml", "2.90 €")] },
-        { name: text("Просеко CAV", "CAV Prosecco"), options: [option("0.75", "l", "35.00 €")] },
+        { name: text("Просеко CAJ", "CAJ Prosecco"), options: [option("0.75", "l", "35.00 €")] },
       ],
     },
     {
