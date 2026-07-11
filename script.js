@@ -1,7 +1,7 @@
 const LOCALE_STORAGE_KEY = "blaze-bay-locale";
 const tabsRoot = document.querySelector("#category-tabs");
 const panelsRoot = document.querySelector("#category-panels");
-const localeToggleRoot = document.querySelector("#locale-toggle");
+const localeSelectRoot = document.querySelector("#locale-select");
 const summaryCardsRoot = document.querySelector("#summary-cards");
 const metaDescription = document.querySelector('meta[name="description"]');
 
@@ -35,8 +35,11 @@ function localizedValue(value) {
     return value;
   }
 
-  if (typeof value === "object" && ("bg" in value || "en" in value)) {
-    return value[appState.locale] ?? value.bg ?? value.en ?? "";
+  if (
+    typeof value === "object" &&
+    ("bg" in value || "en" in value || "ru" in value)
+  ) {
+    return value[appState.locale] ?? value.bg ?? value.en ?? value.ru ?? "";
   }
 
   return "";
@@ -207,34 +210,33 @@ function bindTabs() {
   });
 }
 
-function renderLocaleToggle() {
-  localeToggleRoot.innerHTML = Object.entries(menuData.localeOptions)
+function renderLocaleSelect() {
+  localeSelectRoot.innerHTML = Object.entries(menuData.localeOptions)
     .map(
       ([localeCode, localeCopy]) => `
-        <button
-          type="button"
-          class="locale-button${localeCode === appState.locale ? " is-active" : ""}"
-          data-locale="${localeCode}"
-          aria-pressed="${String(localeCode === appState.locale)}"
-        >
-          ${localizedValue(localeCopy.shortLabel)}
-        </button>
+        <option value="${localeCode}"${localeCode === appState.locale ? " selected" : ""}>
+          ${localizedValue(localeCopy.label)}
+        </option>
       `
     )
     .join("");
 
-  localeToggleRoot.setAttribute(
+  localeSelectRoot.setAttribute(
     "aria-label",
-    localizedValue(menuData.ui.localeToggleAriaLabel)
+    localizedValue(menuData.ui.localeSelectAriaLabel)
   );
 
-  localeToggleRoot.querySelectorAll("[data-locale]").forEach((button) => {
-    button.addEventListener("click", () => {
-      appState.locale = button.dataset.locale;
-      window.localStorage.setItem(LOCALE_STORAGE_KEY, appState.locale);
-      renderApp();
-    });
-  });
+  localeSelectRoot.onchange = () => {
+    const selectedLocale = localeSelectRoot.value;
+
+    if (!(selectedLocale in menuData.localeOptions) || selectedLocale === appState.locale) {
+      return;
+    }
+
+    appState.locale = selectedLocale;
+    window.localStorage.setItem(LOCALE_STORAGE_KEY, appState.locale);
+    renderApp();
+  };
 }
 
 function renderSummaryCards() {
@@ -299,7 +301,7 @@ function renderShell() {
     localizedValue(menuData.ui.navigation.tabsAriaLabel)
   );
 
-  renderLocaleToggle();
+  renderLocaleSelect();
   renderSummaryCards();
 }
 
