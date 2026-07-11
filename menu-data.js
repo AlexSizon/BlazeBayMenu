@@ -99,6 +99,7 @@ const russianReplacements = [
   ["Бекон, чедър, моцарела, кашкавал", "Бекон, чеддер, моцарелла, жёлтый сыр"],
   ["Скариди 3 бр.", "Креветки, 3 шт."],
   ["Бриош питка", "Булочка бриош"],
+  ["Пържени картофи / със сирене", "Картофель фри / с сыром"],
   ["пилешко на грил", "курица-гриль"],
   ["телешко кюфте", "говяжья котлета"],
   ["спаначено кюфте", "котлета из шпината"],
@@ -447,7 +448,7 @@ const menuData = {
         "Crispy shareables.\nSauce choices include ketchup, mayo, mustard, BBQ, garlic, cheddar, and unagi."
       ),
       items: [
-        { name: text("Пържени картофи", "French Fries"), options: [option("180", "g", "4.50 €")] },
+        { name: text("Пържени картофи / със сирене", "French Fries / with Cheese"), options: [option("180", "g", "4.50 €")] },
         { name: text("Сладки картофи", "Sweet Potato Fries"), options: [option("170", "g", "5.20 €")] },
         { name: text("Скариди темпура", "Tempura Shrimp"), options: [option("200", "g", "8.50 €")] },
         { name: text("Лаваш със сулугуни", "Suluguni Lavash"), options: [option("170", "g", "6.50 €")] },
