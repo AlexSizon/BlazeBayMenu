@@ -413,6 +413,10 @@ body::before {
   animation: panel-enter 180ms ease;
 }
 
+.menu-panel + .menu-panel {
+  margin-top: 20px;
+}
+
 .panel-header {
   display: grid;
   gap: 0.7rem;
@@ -426,7 +430,7 @@ body::before {
 
 .menu-list {
   display: grid;
-  gap: 0.85rem;
+  gap: calc(0.85rem + 10px);
 }
 
 .menu-item {
